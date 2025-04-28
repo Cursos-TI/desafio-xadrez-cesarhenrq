@@ -15,7 +15,7 @@ void movimentacao_simples(int casas, char* direcao) {
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int numero_casas_bispo = 5, numero_casas_torre = 5, numero_casas_rainha = 8, numero_casas_cavalo = 1; 
+    int numero_casas_bispo = 5, numero_casas_torre = 5, numero_casas_rainha = 8, numero_casas_cavalo = 3; 
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
@@ -36,14 +36,17 @@ int main() {
     // Um loop pode representar a movimentação horizontal e outro vertical.
     printf("\nMovimentação do Cavalo:\n");
     for(int i = 1; i <= numero_casas_cavalo; i++) {
-        int passos = 0;
-
-        while (passos < 2) {
-            printf("Baixo\n");
-            passos++;
+        if (i < 3) {
+            continue;
         }
 
-        printf("Esquerda\n");
+        for(int j = 1; j <= numero_casas_cavalo; j++) {
+            if (j < 2) {
+                continue;
+            }
+            printf("Cima\n");
+        }
+        printf("Direita\n");
     }
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
